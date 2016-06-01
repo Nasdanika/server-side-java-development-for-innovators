@@ -1,5 +1,7 @@
 # Introduction
 
+## NOTE - This book is under development!!!
+
 More than one way to skin a cat.
 Motto - collect, retain, disseminate knowledge - research/new product, crowd-developed apps.
 Special requirements
