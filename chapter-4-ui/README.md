@@ -12,4 +12,4 @@ why Knockout, why not Angular - too complex, swallows/hides binding errors.
 * Mobile testing
   * Mobile browser - same page classes, maybe modifications in logic to address responsiveness.
   * Hybrid, native - different page classes, but same actors and tests.
-* 
+* ...
