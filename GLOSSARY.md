@@ -1,5 +1,4 @@
 # Glossary
 
 ## Actor Interface
-
-Actor interface ...
+Provide a definition here...
