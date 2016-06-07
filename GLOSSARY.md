@@ -1,5 +1,5 @@
 # Glossary
 
-## Actor
+## Actor Interface
 
 Actor interface ...

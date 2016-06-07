@@ -8,7 +8,7 @@ chapter happens after that promised meeting.
   * Registered users - browse accounts, statements, transactions.  
 * Write stories
 * Browse stories, actors/users, and their relationships by running in Eclipse. 
-* Write [actor interfaces](../GLOSSARY.md#Actor) with blank implementations and (pending) tests. 
+* Write Actor Interface s with blank implementations and (pending) tests. 
 * Build
 * Browse documentation and test results
 * Docker image.
