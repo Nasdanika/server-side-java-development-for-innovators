@@ -1,5 +1,5 @@
 # Glossary
 
-## Actor (Test)
+## Actor
 
 Actor interface ...

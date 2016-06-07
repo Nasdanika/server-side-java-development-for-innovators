@@ -1,6 +1,6 @@
 # Introduction
 
-There is a saying stating that "There more than one way to skin a cat". There is definitely more than one way to develop
+There is a saying stating that "There is more than one way to skin a cat". There is definitely more than one way to develop
 server-side software applications, including web applications and mobile applications' back-ends.
 
 I work in the Innovation/Research & Development area and part of my job is to build prototypes for new business solutions.
@@ -35,7 +35,8 @@ Reasons for choosing a particular technology among the alternatives are explaine
 
 These are the key principles used in developing a new online banking product/prototype:
 * __Functionality first__ - as one of my friends said once _"It is much easier to make a functional application fast than a fast application functional."_ You can replace ``functional`` with ``secure``, ``highly available`` or other quality attributes. This statement does not mean that the application developed in the course of this book will be insecure, faulty or slow. It only means that we will develop functionality first, then apply security, show how to scale the app vertically and horizontally and make it fault tolerant.
-* __Focus__ - keep things either close to each other or linked to minimize context switching and mental stitching.
+* __Focus__ - keep related things either close to each other or linked to minimize context switching and mental stitching.
+* __Contextual execution__ - the framework takes care of creating an invocation context (persistence, services, ...) to minimize the amount of plumbing code in the application.
 * __Modeling__
 * __Declarative development__
 * __Simplicity__ - when we need to do ``A`` we will use a tool or a framework which does just ``A`` and does it good instead of a tool which does the entire alphabet, even if the latter is super-hot. There are two reasons:

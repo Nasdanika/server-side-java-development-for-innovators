@@ -6,4 +6,5 @@
 * [Chapter 3: Services](chapter-3-services/README.md)
 * [Chapter 4: User Interface](chapter-4-ui/README.md)
 * [Chapter 5: Scaling-up](chapter-5-scaling-up/README.md)
+* [Glossary](GLOSSARY.md)
  
