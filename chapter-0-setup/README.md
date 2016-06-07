@@ -45,7 +45,7 @@ TODO - overview of workspace projects
 * ``org.nasdanika.bank.tests`` - 
 * ``org.nasdanika.bank.tests.results`` - 
 * UI Driver
-  * ``org.nasdanika.ui.driver.actors`` - 
+  * ``org.nasdanika.ui.driver.actors`` - Contains actor interfaces and actor factory interface. Actor interface defines...
   * ``org.nasdanika.ui.driver.actors.impl`` - 
   * ``org.nasdanika.ui.driver.pages`` - 
   * ``org.nasdanika.ui.driver.pages.impl`` - 

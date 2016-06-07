@@ -8,7 +8,7 @@ chapter happens after that promised meeting.
   * Registered users - browse accounts, statements, transactions.  
 * Write stories
 * Browse stories, actors/users, and their relationships by running in Eclipse. 
-* Write Actor Interfaces with blank implementations and (pending) tests. 
+* Write Actor Interfaces with blank implementations and (pending) tests. Describe the concept of the Actor Interface and implementation (or describe it in the setup chapter. 
 * Build
 * Browse documentation and test results
 * Docker image.
