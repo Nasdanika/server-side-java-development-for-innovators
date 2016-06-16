@@ -32,6 +32,8 @@ Click File > New > Other, search for ``Nasanika`` in the wizard, or scroll down 
 
 TODO - screenshot(s).
 
+Resolve and set the target platform.
+
 ### Workspace Projects
 TODO - overview of workspace projects
 * ``org.nasdanika.bank`` - Model project, ...
@@ -40,10 +42,12 @@ TODO - overview of workspace projects
 * ``org.nasdanika.bank.doc`` - Documentation project, JavaDoc...
 * ``org.nasdanika.bank.feature`` -  
 * ``org.nasdanika.bank.parent`` - 
+* ``org.nasdanika.bank.product`` - 
 * ``org.nasdanika.bank.repository`` - 
 * ``org.nasdanika.bank.target`` - 
 * ``org.nasdanika.bank.tests`` - 
 * ``org.nasdanika.bank.tests.results`` - 
+* ``org.nasdanika.bank.tests.results.feature`` - 
 * UI Driver
   * ``org.nasdanika.ui.driver.actors`` - Contains actor interfaces and actor factory interface. Actor interface defines...
   * ``org.nasdanika.ui.driver.actors.impl`` - 
@@ -68,6 +72,10 @@ TODO - overview of workspace projects
 * Stop the container, remove.
 * Push image.
 * Commit Dockerfile.
+
+## 9. Customize documentation content
+* Show/hide global package, bundles, and NSD content, 
+* 2 doc routes - one for developers with all the details, another for business - user stories, tests, but no bundles and global packages.  
 
 ## Summary
 
