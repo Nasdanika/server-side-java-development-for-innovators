@@ -11,10 +11,28 @@ So, what do we do at this stage with such limited information available? We will
 Download [Eclipse Modeling Tools](https://www.eclipse.org/downloads/) for your platform, if you don't have it already.
 
 ## 2. Maven/m2e
-Open Eclipse marketplace client (Help > Eclipse Marketplace... menu), search for Maven of M2E, install M2E. You can also install standalone [Maven](https://maven.apache.org/download.cgi).
+
+* Open Eclipse marketplace client (Help > Eclipse Marketplace... menu),
+
+![Eclipse Marketplace Menu](eclipse-marketplace-menu.png)
+ 
+* Search for ``Maven``,
+
+* Scroll to "Maven Integration for Eclipse (Luna and newer) 1.5" 
+
+![M2E in Eclipse Marketplace Dialog](m2e-in-eclipse-marketplace-dialog.png)
+
+* Click ``Install`` and follow the installation instructions.
+
+* Once installed and restarted - go to "Help > Check for updates" to get the latest version of m2e (1.7.0 as of time of writing)
+
+![Check for updates](m2e-in-eclipse-marketplace-dialog.png)
+
 
 ## 3. Tycho Configurator
 Go to Window > Preferences > Maven > Discovery and click "Open Catalog". Search for ``tycho``, select "Tycho Configurator", click "Finish".
+
+TODO - screenshots
 
 Tycho resources:
 
