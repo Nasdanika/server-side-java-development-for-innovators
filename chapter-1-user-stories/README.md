@@ -15,3 +15,4 @@ chapter happens after that promised meeting.
 
 [TODO]: # (Story diagrams.)
 [TODO]: # (Red flask for failed and yellow flask for error tests. Empty flask for pending tests.)
+[TODO]: # (Mention financial aggregator.)
