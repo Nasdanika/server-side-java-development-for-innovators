@@ -39,20 +39,28 @@ Tycho resources:
 * [Home page](https://eclipse.org/tycho/)
 * [Tutorial](http://www.vogella.com/tutorials/EclipseTycho/article.html).
 
-## 4. Nasdanika Application Workspace Wizard and Story Editor
+## 4. Eclipse Web Developer Tools
+
+We might need to edit HTML and JavaScript files, so Eclipse Web Developer Tools may come in handy. Go to "Help > Install New Software" menu, select Eclipse release repository (Neon below) and check "Eclipse Web Developer Tools":
+
+![Eclipse Web Developer Tools](eclipse-web-developer-tools.png).
+
+Follow the installation instructions.
+
+## 5. Nasdanika Application Workspace Wizard and Story Editor
 
 * Open the Eclipse Marketplace Client once again.
 * Search for ``Nasdanika``
 * Install ``Nasdanika Application Workspace Wizard`` and ``Story Editor``
 
-TODO - Screenshot
+![Eclipse Marketplace - Nasdanika](eclipse-marketplace-nasdanika.png)
 
-## 5. Version control
+## 6. Version control
 We will also need a client for a version control system. We are going to use Git, so there is no need to install anything, as Git 
 client is bundled with Eclipse. 
 
-## 6. Graphviz   
-Install [Graphviz](www.graphviz.org) - it will be used behind the scenes for generation of UML diagram depicting the structure and behavior of our system.
+## 7. Graphviz   
+Install [Graphviz](www.graphviz.org) - it will be used behind the scenes for generation of UML diagrams depicting the structure and behavior of our system.
 
 ## Summary
 Now we have all prerequisites installed and can proceed to [generating application projects](generate-application-projects.md).
