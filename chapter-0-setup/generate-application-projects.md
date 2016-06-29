@@ -85,7 +85,7 @@ Once the workspace rebuilds, all errors shall disappear.
 
 ## Summary
 
-So now we have a set of projects which constitute our application. In the [next section](run-application-in-eclipse.md) we will run our project from Eclipse. 
+So now we have a set of projects which constitute our application. In the [next section](run-application-in-eclipse.md) we will run our application from Eclipse. 
 
 A detailed explanation of the role and structure of each project will be provided later. 
 

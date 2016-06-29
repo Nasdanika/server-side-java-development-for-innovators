@@ -11,6 +11,7 @@ When the application starts we should see console output similar to the one belo
 
 There is an error message with a stack trace because we don't have test results yet.
 
+
 ## Navigate to the test route
 Now when we open ``http://localhost:8080/nasdanika-bank/router/nasdanika-bank.html`` in a Web browser it shall display a welcome message as shown below:
 
@@ -20,6 +21,8 @@ Now when we open ``http://localhost:8080/nasdanika-bank/router/nasdanika-bank.ht
 After that we open ``http://localhost:8080/nasdanika-bank/router/doc.html`` and see the Nasdanika Bank Information Center (the documentation system):
 
 ![Nasdanika Bank Information Center](nasdanika-bank-information-center.png)
+
+It takes some time for the documentation system to index pages - we should check that a message ``Indexed ... pages`` appears twice in the console output before the documentation system can be used.
 
 ## Shutdown
 
