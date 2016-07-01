@@ -1,86 +1,68 @@
 # Application Projects
 
-## org.nasdanika.bank.aggregator
+The wizard has generated a whopping number of projects - 18! 
+It may seem scary at firsts, but the truth is that we aren't going to touch most of these projects:
+* Development will be done in the model and application projects, 
+* Tests will be developed in the tests project with supporting classes in the UI driver projects.
+* Documentation will be hosted in the documentation project and/or in the model and application projects.  
 
-TODO - screenshot
-
-## org.nasdanika.bank.feature
-
-TODO - screenshot
-
-## org.nasdanika.bank.parent
-
-TODO - screenshot
-
-## org.nasdanika.bank.product
-
-TODO - screenshot
-
-## org.nasdanika.bank.product.feature
-
-TODO - screenshot
-
-## org.nasdanika.bank.product.parent
-
-TODO - screenshot
-
-## org.nasdanika.bank.repository
-
-TODO - screenshot
-
-## org.nasdanika.bank.target
-
-TODO - screenshot
-
-## org.nasdanika.bank.tests.feature
-
-TODO - screenshot
+The sections below provide a quick overview of each project's role in the solution.
 
 ## org.nasdanika.bank
+![model](model.png)
 
-TODO - screenshot
+## org.nasdanika.bank.aggregator
+![aggregator](aggregator.png)
 
 ## org.nasdanika.bank.app
-
-TODO - screenshot
+![app](app.png)
 
 ## org.nasdanika.bank.doc
+![doc](doc.png)
 
-TODO - screenshot
+## org.nasdanika.bank.feature
+![feature](feature.png)
+
+## org.nasdanika.bank.parent
+![parent](parent.png)
+
+## org.nasdanika.bank.product
+![product](product.png)
+
+## org.nasdanika.bank.product.feature
+![product feature](product-feature.png)
+
+## org.nasdanika.bank.product.parent
+![product parent](product-parent.png)
+
+## org.nasdanika.bank.repository
+![repository](repository.png)
+
+## org.nasdanika.bank.target
+![target](target.png)
 
 ## org.nasdanika.bank.tests
+![tests](tests.png)
 
-TODO - screenshot
+## org.nasdanika.bank.tests.feature
+![tests feature](tests-feature.png)
 
 ## org.nasdanika.bank.tests.results
+![tests results](tests-results.png)
 
-TODO - screenshot
-
-## UI Driver Projects
-
-[Web Test](https://github.com/Nasdanika/server/wiki/webtest)
-
-![Web Test Components](https://github.com/Nasdanika/server/wiki/webtest.png)
-
-TODO - diagram, link to online docs.
+## UI Driver
 
 ### org.nasdanika.bank.ui.driver.actors
-
-TODO - screenshot
+![actors](actors.png)
 
 ### org.nasdanika.bank.ui.driver.actors.impl
-
-TODO - screenshot
+![actors impl](actors-impl.png)
 
 ### org.nasdanika.bank.ui.driver.pages
-
-TODO - screenshot
+![pages](pages.png)
 
 ### org.nasdanika.bank.ui.driver.pages.impl
-
-TODO - screenshot
-
-
+![pages impl](pages-impl.png)
 
 
 ## Summary
