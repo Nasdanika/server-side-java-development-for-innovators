@@ -17,7 +17,7 @@ So, what do we do at this stage with such limited information available? We will
 * [Generate application projects](generate-application-projects.md)
 * [Run the application in Eclipse](run-application-in-eclipse.md)
 * [Explore the documentation system](documentation-system-overview.md)
-* [Explore the application projects](application-projects-overview.md)
+* [Explore the application projects](application-projects-overview/README.md)
 * [Build and launch the application locally](build-and-launch-locally.md)
 * [Dockerize the application](dockerize.md)
 * [Set up an automated build](automated-build.md)
