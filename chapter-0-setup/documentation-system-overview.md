@@ -287,6 +287,8 @@ As you can see, markdown with configurable resolvers may be considered an applic
 
 If needed, custom resolvers may be created for example for organization information schemas, or back-end data formats, or API registries. 
 
+A good way to write markdown documentation is to create a markdown file, register it with the documentation system, start the application from Eclipse in Debug mode and open the new page in the browser. After that once you save changes - go to the browser, refresh the page and see the rendering result.
+
 ## User Stories and Test Results
 
 We don't have any user stories or test results in the system yet, so there are no TOC nodes for them. 
