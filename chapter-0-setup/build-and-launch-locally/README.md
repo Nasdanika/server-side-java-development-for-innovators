@@ -1,4 +1,3 @@
-# Setup
-## Build and Launch Locally
+# Build and Launch Locally
 
 Maven sequence - clean product, javadoc, verify, product package

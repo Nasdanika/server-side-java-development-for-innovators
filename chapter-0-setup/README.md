@@ -18,7 +18,7 @@ So, what do we do at this stage with such limited information available? We will
 * [Run the application in Eclipse](run-application-in-eclipse.md)
 * [Explore the documentation system](documentation-system-overview.md)
 * [Explore the application projects](application-projects-overview/README.md)
-* [Build and launch the application locally](build-and-launch-locally.md)
+* [Build and launch the application locally](build-and-launch-locally/README.md)
 * [Dockerize the application](dockerize.md)
 * [Set up an automated build](automated-build.md)
   * Publish code to GitHub,

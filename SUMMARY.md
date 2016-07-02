@@ -6,7 +6,7 @@
   * [Run the application in Eclipse](chapter-0-setup/run-application-in-eclipse.md)
   * [Explore the documentation system](chapter-0-setup/documentation-system-overview.md)
   * [Explore the application projects](chapter-0-setup/application-projects-overview/README.md)
-  * [Build and launch the application locally](chapter-0-setup/build-and-launch-locally.md)
+  * [Build and launch the application locally](chapter-0-setup/build-and-launch-locally/README.md)
   * [Dockerize the application](chapter-0-setup/dockerize.md)
   * [Set up an automated build](chapter-0-setup/automated-build.md)
   * [Summary](chapter-0-setup/summary.md)  
