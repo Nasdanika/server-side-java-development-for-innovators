@@ -45,6 +45,8 @@ After that entering the product file name and selecting an existing launch confi
 
 ![New product from launch configuration](product-from-launch-configuration.png)
 
+Once a new product file is created it is important to set product ID - otherwise the Maven/Tycho build will fail.
+
 ## Summary
 
 By now we have launched our new application from Eclipse IDE and made sure that it works. Launching the application from Eclipse, especially in Debug mode, is the primary way of how developers will use the application.
