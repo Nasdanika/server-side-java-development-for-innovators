@@ -124,8 +124,10 @@ The parent project contains the parent pom with definitions common for all proje
 ## org.nasdanika.bank.product
 ![product](product.png)
 
-The product project contains files which define how to build and Eclipse product for the application. 
+The product project contains files which define how to build an [Eclipse product](http://www.vogella.com/tutorials/EclipseProductDeployment/article.html) for the application. 
 Also, the product file was used to launch the application in Eclipse. 
+
+The project also contains a generated Dockerfile to build a Docker image for the application. 
 
 ## org.nasdanika.bank.product.feature
 ![product feature](product-feature.png)

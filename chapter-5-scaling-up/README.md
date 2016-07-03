@@ -17,3 +17,5 @@
 * Finer grained - ECF.
 * Several linked docker images (Docker compose) - the app, server, db.
 * Docker swarm. 
+
+Running in Docker - Add an application with a shutdown hook, modify startup parameters - no console, app. Start as Java, not as executable?

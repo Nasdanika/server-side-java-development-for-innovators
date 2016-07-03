@@ -12,5 +12,5 @@ You may need to remove the running platform bundles.
 * Scheduler
 * Function
 * Promises - unified approach - "invoke" people and third parties.
-* Rules
+* Rules - transaction listeners (deltas), low-level Java coding or XText-based language with built-in app domain model, translates to a model - interpreted or as a source for generation.
 * SCA - template model, instances in the repository, promised execution?
