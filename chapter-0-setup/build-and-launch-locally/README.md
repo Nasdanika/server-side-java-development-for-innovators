@@ -6,9 +6,13 @@ There are two ways to build an Eclipse product in Eclipse.
 
 ### Eclipse Product Export Wizard
 
-For this we'd need to open the product file, in the Exporting section click on "Elipse Product export wizard" link, uncheck "Synchronize before exporting", enter export location and click "Finish".
+For this we'd need to open the product file, in the Exporting section click on "Elipse Product export wizard" link. 
 
-TODO - resolve why complains about xml.
+![export-product](export-product.png)
+
+Uncheck "Synchronize before exporting", enter export location and click "Finish".
+
+![export-dialog](export-dialog.png)
 
 ### Maven builds
 
@@ -16,13 +20,13 @@ A typical Maven/Tycho build is pretty straightforward - run ``mvn clean verify``
 
 Our build process is a bit trickier because we want our product to contain JavaDoc and test results. Therefore there are two pom.xml files which will be used and each will be executed twice with different goals.
 
-Project        | Goals                   | Comment 
----------------|:-----------------------:|:--------
-aggregator     | package                 | The product parent requires the application repository even in order to execute the clean task.   
-product.parent | clean                   | Cleans javadoc output directory in the doc project and test results output directory in the test results project.
-aggregator     | clean javadoc:aggregate | Generates aggregated JavaDoc and puts it to the doc project.  
-aggregator     | verify                  | Builds bundles, executes tests and stores them to the test results project, builds a repository. 
-product.parent | package                 | Uses the repository from the previous step and doc and test results bundles to build an Eclipse product.
+Project        | Goals                           | Comment 
+---------------|:-------------------------------:|:--------
+aggregator     | package                         | The product parent requires the application repository even in order to execute the clean task.   
+product.parent | clean                           | Cleans javadoc output directory in the doc project and test results output directory in the test results project.
+aggregator     | clean package javadoc:aggregate | Generates aggregated JavaDoc and puts it to the doc project.  
+aggregator     | verify                          | Builds bundles, executes tests and stores them to the test results project, builds a repository. 
+product.parent | package                         | Uses the repository from the previous step and doc and test results bundles to build an Eclipse product.
 
 The first row shall be executed only if there is no repository from the previous build, e.g. we build for the first time. However, in this case we don't have to execute product.parent clean. So when we run a build for the first time we can start from the third row.   
 
@@ -52,7 +56,7 @@ Once again we prefer to do everything from Eclipse and so we create another exte
 Winstone port collides with the application port and therefore Winstone shall be down when aggregator verify is being executed. An alternative is to change Winstone port number.
  
 All these steps can be scripted, but in this section we will execute them manually - there is another section dedicated to setting up an automated build. We start from the clean workspace so the sequence would be:
-* aggregator javadoc:aggregate
+* aggregator package javadoc:aggregate
 * aggregator verify
 * Start Winstone
 * product.parent package
@@ -62,7 +66,7 @@ For subsequent builds the sequence would be:
 * Start Winstone
 * product.parent clean
 * Stope Winstone
-* aggregator javadoc:aggregate
+* aggregator package javadoc:aggregate
 * aggregator verify
 * Start Winstone
 * product.parent package
@@ -97,4 +101,22 @@ Then click "Run". This has to be done only once per build configuration. In subs
 
 
 ## Launch
+
+After completing all the build steps there should be an Eclipse product for Windows in the target directory of the  product project:  
+
+![eclipse-product-win](eclipse-product-win.png)
+
+We launch the product by double-clicking on ``eclipse.exe``. A window opens with a familiar OSGi console output:
+
+![product-window](product-window.png)
+ 
+To validate that the application is functional we can open either the test route URL (``http://localhost:8080/nasdanika-bank/router/nasdanika-bank.html``) or the documentation route URL (``http://localhost:8080/nasdanika-bank/router/doc.html``) in a browser.
+
+TODO - screenshot of test results in the doc system.
+
+To shutdown the application type ``shutdown`` in OSGi console and press Enter. If the window doesn't close after a few seconds, type another command, e.g. ``ss`` and press Enter - it should close the window.
+
+## Summary
+
+We built a shippable product which can be deployed to Windows or Linux machines. The next step is to dockerize it. 
 

@@ -157,7 +157,7 @@ This project also contains a tests product definition - it will be used to execu
 ![target](target.png)
 
 Target project contains target definition which was used to set up a target platform. 
-The target definition can also be used during the build by adding it to the list of modules to the aggregator pom.xml
+The target definition can also be used during the build by adding it to the list of modules to the aggregator pom.xml and un-commenting ``<target> ... </target>`` section in the parent pom.xml. 
 
 ## org.nasdanika.bank.tests
 ![tests](tests.png)

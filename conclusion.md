@@ -11,6 +11,6 @@ You may need to remove the running platform bundles.
 * Boxing
 * Scheduler
 * Function
-* Promises
+* Promises - unified approach - "invoke" people and third parties.
 * Rules
 * SCA - template model, instances in the repository, promised execution?

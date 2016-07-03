@@ -1,5 +1,18 @@
 # Run the Application in Eclipse
 
+
+## Cleaning up the product
+
+The wizard generates a feature-based product which includes many plug-ins some of which may not be used by the application. 
+The product must be feature based - otherwise Tycho fails to generate Eclipse product with native launch artifacts.
+
+To reduce "noise" in the documentation system caused by unused bundles and packages the application feature
+can "cleaned up" by removing unnecessary bundles.
+Included feature(s) with unnecessary plug-ins shall be removed, and needed plug-ins from that feature(s) shall be added to the application feature. 
+It can be done through the feature editor, but it might be easier to do it at a text level by copying needed plug-in tags from the included feature.xml to the application feature.xml.   
+
+We will do it with the ``org.nasdanika.feature``.
+
 ## Start
 To run the application in Eclipse we shall open the ``org.nasdanika.bank.product`` file in the ``org.nasdanika.bank.product`` project and click either ``Launch an Eclipse application`` or ``Launch and Eclipse application in Debug mode``.
 
@@ -29,23 +42,6 @@ It takes some time for the documentation system to index pages - we should check
 We are done with our initial launch. To gracefully shutdown the application type ``shutdown`` in the console and press <Enter>. Wait for several seconds and if the application does not exit type another command, e.g. ``ss``:
 
 ![Shutdown app](shutdown-app.png)
-
-## Cleanup the product
-
-The wizard generates a feature-based product which includes many plugins some of which may not be used by the application.
-The product can be cleaned-up by going to Debug/Run configuration and un-checking the unneeded bundles.
-
-![Cleanup product](cleanup-product.png) 
-
-After the cleanup the existing product file shall be deleted or renamed and a new file shall be create from the launch configuration by right-clicking on the product project, selecting "New" and then "Product configuration":
-
-![New product configuration](new-product-configuration-wizard.png) 
-
-After that entering the product file name and selecting an existing launch configuration:
-
-![New product from launch configuration](product-from-launch-configuration.png)
-
-Once a new product file is created it is important to set product ID - otherwise the Maven/Tycho build will fail.
 
 ## Summary
 
