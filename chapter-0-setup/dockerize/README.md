@@ -98,9 +98,47 @@ Now if we open ``http://localhost:18080/nasdanika-bank/router/doc.html`` in a We
 
 To shutdown the container use the terminal - type ``shutdown``, press Enter. If the cursor is still blinking after several seconds, enter another command, e.g. ``ss`` and press Enter.
 
+## Push to Docker Hub
+
+To share the image with others we shall push to a registry, Docker Hub in our case. 
+
+First of all we shall create a registry account by going to Window > Preferences menu, selecting Docker > Registry Accounts, clicking Add, and entering account information:
+
+![registry-accounts](registry-accounts.png)
+
+Then we shall tag our image. We right-click on the image and
+select "Tag":
+
+![add-tag](add-tag.png)
+
+and enter new tag into the tag dialog. We are in chapter 0, so 0.0 seems to be an appropriate tag:
+
+![tag-image-dialog](tag-image-dialog.png)
+
+And then right-click again, and select "Push":
+
+![push-image](push-image.png)
+
+In the push image dialog select a tag and a registry account:
+
+![push-image-dialog](push-image-dialog.png)
+
+When we click "Finish" our image will get uploaded to the registry:
+
+![pushing-image-dialog](pushing-image-dialog.png)
+
+If we click "Details >>", we can see upload progress for image layers:
+
+![pushing-image-dialog-details](pushing-image-dialog-details.png)
+
+When push completes we can see a new tag on https://hub.docker.com/r/nasdanika/bank/tags/:
+
+![pushing-image-dialog](pushing-image-dialog.png)
+
 ## Summary
 
-Now we have a Docker image with our application. The image is interactive - in order to shutdown the application we had to use the OSGi console. 
+Now we have a Docker image with our application and we have shared it with the world. 
+Currently the image is interactive - in order to shutdown the application we had to use the OSGi console. 
 It shall be OK for now. 
 In the [Scaling Up](../../chapter-5-scaling-up/README.md) chapter we will modify the application to gracefully shutdown on ``SIGTERM``.
 
