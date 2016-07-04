@@ -13,15 +13,17 @@ Publishing to GitHub is a rather straightforward process. This is how it was don
 * Then for each project in the workspace I right-clicked on it, selected Team > Share project, and added the project to the new Git repository.
 * Finally, I've marked ``target`` and ``bin`` folders as ignored, added other files to the list of staged changes, committed them and pushed to upstream. 
 
-## CircleCI
+## Building on CircleCI and publishing to Docker Hub
 
-I already had an account on CircleCI. To build our application I had to add ``circle.yml`` file to the root of the repository:
+I already had accounts on CircleCI and Docker Hub. To build our application I had to add ``circle.yml`` file to the root of the repository:
 
 ```yml
 machine:
   java:
     version: openjdk8
-    
+  services:
+    - docker
+        
 dependencies: 
   override:
     - echo 'Skipping Dependency Check'
@@ -40,16 +42,17 @@ test:
     - sleep 5
     - cd org.nasdanika.bank.product.parent && mvn package
     - java -cp winstone-0.9.10.jar winstone.tools.WinstoneControl shutdown
+    - docker build -t nasdanika/bank:$CIRCLE_BUILD_NUM org.nasdanika.bank.product/target/products/org.nasdanika.bank.product/linux/gtk
     
 deployment:
   staging:
     branch: master
     commands:
     - mv org.nasdanika.bank.product/target/products/org.nasdanika.bank.product-*.zip $CIRCLE_ARTIFACTS    
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push nasdanika/bank:$CIRCLE_BUILD_NUM
 ```
 
-You can see that build steps in the file mirror the manual build steps which we performed in previous sections. This edition of the file publishes zipped products to $CIRCLE_ARTIFACTS. In the next section we will modify the file to set up integration with Docker Hub.
+You can see that build steps in the file mirror the manual build steps which we performed in previous sections. 
 
-## Docker Hub
-
-TODO.
+Also note that our UI tests detect if they run in a headless mode and use PhantomJS driver instead of Firefox driver. 
