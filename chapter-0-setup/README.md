@@ -20,7 +20,7 @@ So, what do we do at this stage with such limited information available? We will
 * [Explore the application projects](application-projects-overview/README.md)
 * [Build and launch the application locally](build-and-launch-locally/README.md)
 * [Dockerize the application](dockerize/README.md)
-* [Set up an automated build](automated-build.md)
+* [Set up an automated build](automated-build/README.md)
   * Publish code to GitHub,
   * Set up build/test job on CircleCI,
   * Set up automated image build on Docker Hub.

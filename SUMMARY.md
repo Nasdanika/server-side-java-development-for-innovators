@@ -8,7 +8,7 @@
   * [Explore the application projects](chapter-0-setup/application-projects-overview/README.md)
   * [Build and launch the application locally](chapter-0-setup/build-and-launch-locally/README.md)
   * [Dockerize the application](chapter-0-setup/dockerize/README.md)
-  * [Set up an automated build](chapter-0-setup/automated-build.md)
+  * [Set up an automated build](chapter-0-setup/automated-build/README.md)
   * [Summary](chapter-0-setup/summary.md)  
 * [User Stories](chapter-1-user-stories/README.md)
 * [Domain Model](chapter-2-domain-model/README.md)
