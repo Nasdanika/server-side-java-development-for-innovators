@@ -133,7 +133,7 @@ If we click "Details >>", we can see upload progress for image layers:
 
 When push completes we can see a new tag on https://hub.docker.com/r/nasdanika/bank/tags/:
 
-![pushing-image-dialog](pushing-image-dialog.png)
+![docker-hub](docker-hub.png)
 
 ## Summary
 
