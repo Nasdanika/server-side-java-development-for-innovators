@@ -10,8 +10,8 @@ The sections below provide a quick overview of each project's role in the soluti
 
 ## org.nasdanika.bank
 
-This is an EMF project which will contain the application domain model. Currently there is no model, we will create it later.
-An application may have more than one model project and can reference models from plugins, e.g. the [security model](http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.security/apidocs/index.html). 
+This is an EMF project which contains the application domain model. 
+An application may have more than one model project and can reference models from plug-ins, e.g. the [security model](http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.security/apidocs/index.html). 
 
 ![model](model.png)
 
