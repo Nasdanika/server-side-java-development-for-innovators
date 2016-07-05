@@ -306,7 +306,9 @@ The documentation system provides a search facility powered by [Apache Lucene](h
 When the documentation system starts, or when it receives a notification of a changed extension or 
 a bundle, it rebuilds the TOC and indexes content of all TOC nodes. The content is converted to HTML first, and then it is converted to plain text using [jsoup](http://jsoup.org), so only visible text gets indexed. 
 
-Search syntax documentation is available [here](https://lucene.apache.org/core/5_3_1/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#package_description).
+Search syntax documentation is available [here](https://lucene.apache.org/core/6_1_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#package_description).
+
+It takes some time for the documentation system to index pages - the search facility can be used right away, but it will not yield all results until a message ``[Pass ...] Indexed ... pages`` appears in the console output.
 
 ## Different documentation configurations for different audiences
 

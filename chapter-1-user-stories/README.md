@@ -13,6 +13,9 @@ chapter happens after that promised meeting.
 * Browse documentation and test results
 * Docker image.
 
+--- Separate chapter ? ---
+Initial tests - executable spec, WHAT, not yet HOW. DSL
+
 [TODO]: # (Story diagrams.)
 [TODO]: # (Red flask for failed and yellow flask for error tests. Empty flask for pending tests.)
 [TODO]: # (Mention financial aggregator.)

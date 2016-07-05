@@ -35,8 +35,6 @@ After that we open ``http://localhost:8080/nasdanika-bank/router/doc.html`` and 
 
 ![Nasdanika Bank Information Center](nasdanika-bank-information-center.png)
 
-It takes some time for the documentation system to index pages - we should check that a message ``Indexed ... pages`` appears twice in the console output before the documentation system can be used.
-
 ## Shutdown
 
 We are done with our initial launch. To gracefully shutdown the application type ``shutdown`` in the console and press <Enter>. Wait for several seconds and if the application does not exit type another command, e.g. ``ss``:
