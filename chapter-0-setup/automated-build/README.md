@@ -55,4 +55,6 @@ deployment:
 
 You can see that build steps in the file mirror the manual build steps which we performed in previous sections. 
 
-Also note that our UI tests detect if they run in a headless mode and use PhantomJS driver instead of Firefox driver. 
+A docker image published by the build process is available at [Docker Hub Nasdanika Bank](https://hub.docker.com/r/nasdanika/bank/) repository. 
+
+
