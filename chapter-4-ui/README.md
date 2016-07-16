@@ -25,7 +25,7 @@ Tests - @Service to get access to CDO transaction to validate balance?
 Rendering:
 - Building - HTML library
 - Templating - JET - link to Vogella tutorial, old, good, compiles to Java, Java syntax, tool that works, we are not after fancy.
-- Interpolation - HTML, mustache syntax ``{{}}`` - chart example from Doc route - script and how it is interpolated (Java code)
+- Interpolation - HTML, mustache syntax `` { { } } `` - chart example from Doc route - script and how it is interpolated (Java code)
 - Mix and match - again the chart example and some example with JET.
 - Other things - mustach for Java, FreeMarker.
 
