@@ -3,6 +3,8 @@
 As you probably remember from the beginning of the previous chapter, our boss told us about a meeting with the business folks. The action of this
 chapter happens after that promised meeting. 
 
+UI sketches - why doesn't make much sense to put more effort. Model-relative image path resolution.
+
 * Overview
   * Guest - login, registration.
   * Registered users - browse accounts, statements, transactions.  
