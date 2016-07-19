@@ -18,6 +18,10 @@ UI sketches - why doesn't make much sense to put more effort. Model-relative ima
 --- Separate chapter ? ---
 Initial tests - executable spec, WHAT, not yet HOW. DSL
 
+Sketching. To wireframe or not to wirefarme - corporate template, skills, processes (e.g. UX team must be involved). Static wireframes using HTML factory - evolve to dynamic.  
+
+PlantUML Eclipse plugin screenshot
+
 [TODO]: # (Story diagrams.)
 [TODO]: # (Red flask for failed and yellow flask for error tests. Empty flask for pending tests.)
 [TODO]: # (Mention financial aggregator.)
