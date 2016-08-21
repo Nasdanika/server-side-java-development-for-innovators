@@ -226,7 +226,7 @@ Direction, depth, and left-to-right are not applicable to activity diagrams and 
 
 ##### State hierarchy
 
-This diagram/view represents views as objects with scenarios which can be initiated from states are fields. 
+This diagram/view represents states as objects with scenarios which can be initiated from states are fields. 
 Sub-states are connected to super-states with the generalization/inheritance connection:
 
 ![catalog-state-hierarchy-diagram](catalog-state-hierarchy-diagram.png) 
@@ -238,7 +238,7 @@ scenarios are considered "private" and are not displayed unless referenced by sc
 
 ![catalog-state-transition-diagram](catalog-state-transition-diagram.png)
 
-For stories state-transition diagrams also show start and end pseudo-states as will be shown later.
+For stories state-transition diagrams also show start and end pseudo-states as will be demostrated later.
 
 ##### Use case
 
