@@ -201,7 +201,7 @@ If a class has non-route operations - own or inherited, this tab is present and 
 #### Routes
 
 This tab is present if the class has routes. There is currenlty no routes. Routes will be explained in the
-[UI chapter](../chapter-4-ui/README.md). 
+[UI chapter](../chapter-5-ui/README.md). 
 
 #### Supertypes
 

@@ -140,7 +140,7 @@ When push completes we can see a new tag on https://hub.docker.com/r/nasdanika/b
 Now we have a Docker image with our application and we have shared it with the world. 
 Currently the image is interactive - in order to shutdown the application we had to use the OSGi console. 
 It shall be OK for now. 
-In the [Scaling Up](../../chapter-5-scaling-up/README.md) chapter we will modify the application to gracefully shutdown on ``SIGTERM``.
+In the [Scaling Up](../../chapter-6-scaling-up/README.md) chapter we will modify the application to gracefully shutdown on ``SIGTERM``.
 
 The next step is set up an automated build and deployment of our application and Docker images. 
 

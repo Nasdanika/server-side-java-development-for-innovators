@@ -293,6 +293,6 @@ These diagrams will be of great help in communicating the purpose of the prototy
 
 Tag ``17`` of ``nasdanika/bank`` image at [Doker Hub](https://hub.docker.com/r/nasdanika/bank/) corresponds to the state of our application at the end of this chapter. 
 
-In the [next chapter](../chapter-2-automated-tests/README.md) we will create initial tests and link them to the story model.
+In the [next chapter](../chapter-2-automated-ui-tests/README.md) we will create initial tests and link them to the story model.
 These tests will serve as executable specifications for our prototype.  
 

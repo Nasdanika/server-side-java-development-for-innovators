@@ -53,7 +53,7 @@ This route serves documentation content. It uses ScrService to obtain runtime in
 
 This component exposes RepositoryProvider service backed by and embedded H2 database.
 
-In our application session provider (client), server, and H2 database reside in the same JVM. As we will see in the [Scaling Up](../../chapter-5-scaling-up/README.md) chapter the application can be vertically scaled by running a standalone H2 (or another) database, a server process connected to the database, and client processes connected to the server. 
+In our application session provider (client), server, and H2 database reside in the same JVM. As we will see in the [Scaling Up](../../chapter-6-scaling-up/README.md) chapter the application can be vertically scaled by running a standalone H2 (or another) database, a server process connected to the database, and client processes connected to the server. 
 
 #### nasdanika-bank-server.xml
 
