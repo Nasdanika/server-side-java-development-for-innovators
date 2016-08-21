@@ -1,6 +1,6 @@
 # User Interface
 
-why Knockout, why not Angular - too complex, swallows/hides binding errors.
+why Knockout, why not Angular - too complex, swallows/hides binding errors. Knockout conceptually is similar to JFace data binding
 
 * Concept of routes
 * Dispatch Routes, mounting of resources. Contextual execution.
@@ -29,3 +29,4 @@ Rendering:
 - Mix and match - again the chart example and some example with JET.
 - Other things - mustach for Java, FreeMarker.
 
+Add registration - show that spending time on sketches wireframes and mockups is not worth it because the domain model and routes are already in place. Maybe mockups, but in Guest routes.
