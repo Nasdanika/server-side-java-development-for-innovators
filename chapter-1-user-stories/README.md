@@ -238,7 +238,9 @@ scenarios are considered "private" and are not displayed unless referenced by sc
 
 ![catalog-state-transition-diagram](catalog-state-transition-diagram.png)
 
-For stories state-transition diagrams also show start and end pseudo-states as will be demostrated later.
+State-transition diagrams may also show start and end pseudo-states. Scenarios with no context states are shown as originating from the start state, and scenarios with no outcome state transition to the end state.
+In the case of state-transition diagrams at the story level, scenarios having context states listed in the story start states are also shown as originating from the diagram start state, and scenarios with the end state listed in the
+story end states are shown as transitioning to the end state of the story.
 
 ##### Use case
 

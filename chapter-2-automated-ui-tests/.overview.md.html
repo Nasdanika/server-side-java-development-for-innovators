@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>C:\Users\pv33984\git\server-side-java-development-for-innovators\chapter-2-automated-ui-tests\.README.md.html</title>
+<title>C:\Users\pv33984\git\server-side-java-development-for-innovators\chapter-2-automated-ui-tests\.overview.md.html</title>
 
 
 <style type="text/css">
@@ -639,22 +639,15 @@ function setDocumentScrollTop(ypos)
 
 </head>
 <body class="markdown-body">
-<h1> <a id="automated-ui-tests" class="anchor" href="#automated-ui-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Automated UI Tests</h1> 
+<h1> <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h1> 
+<p>In this chapter we are going to create automated UI tests for our application, execute them and link test results to the story model elements.</p> 
+<p>You may wonder how are going to execute tests if we don't have our application yet. We will use <a href="https://github.com/Nasdanika/server/wiki/webtest">Nasdanika WebTest</a> framework and will execute tests in a variety of ways. In particular, we will create several implementations of the UI driver:</p> 
 <ul> 
- <li><a href=".overview.md.html">Overview</a></li> 
- <li><a href="tests\pending-and-nop\.README.md.html">Pending and NOP tests</a></li> 
- <li><a href="tests\sketches\.README.md.html">Tests with sketches</a></li> 
- <li>UI Driver 
-  <ul> 
-   <li><a href="ui-driver\specification\.README.md.html">Specification</a></li> 
-   <li>Implementation 
-    <ul> 
-     <li><a href="ui-driver\implementation\sketches\.README.md.html">Sketches</a></li> 
-     <li><a href="ui-driver\implementation\wireframes\.README.md.html">Wireframes</a></li> 
-     <li><a href="ui-driver\implementation\mockups\.README.md.html">Mockups</a></li> 
-    </ul> </li> 
-  </ul> </li> 
- <li><a href=".summary.md.html">Summary</a></li> 
-</ul>
+ <li>Sketches - this implementation will use <code>@Sketch</code> annotation and sketch images we already have from the previous chapter.</li> 
+ <li>Wireframes - this implementation will demonstrate how to use <a href="http://plantuml.com/salt.html">PlantUML Salt</a> for wireframing.</li> 
+ <li>Mockups - this implementation will drive mock-up screens. Later we will reuse some logic from the mock-ups in the reference implementation.</li> 
+</ul> 
+<p>Keep in mind that our primary goal is to build/define experience, not the application. As such the initial goal of our tests is to specify that experience and then to ensure that whatever they test delivers it. </p> 
+<p>Once fleshed out, our tests will serve as an executable specification for our application, playing a role similar to <a href="https://en.wikipedia.org/wiki/Technology_Compatibility_Kit">Technology Compatibility Kit (TCK)</a> in the <a href="https://en.wikipedia.org/wiki/Java_Community_Process">Java Community Process</a>.</p>
 </body>
 </html>

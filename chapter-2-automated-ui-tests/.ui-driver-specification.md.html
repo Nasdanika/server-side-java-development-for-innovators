@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>C:\Users\pv33984\git\server-side-java-development-for-innovators\chapter-2-automated-ui-tests\.README.md.html</title>
+<title>C:\Users\pv33984\git\server-side-java-development-for-innovators\chapter-2-automated-ui-tests\.ui-driver-specification.md.html</title>
 
 
 <style type="text/css">
@@ -639,22 +639,26 @@ function setDocumentScrollTop(ypos)
 
 </head>
 <body class="markdown-body">
-<h1> <a id="automated-ui-tests" class="anchor" href="#automated-ui-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Automated UI Tests</h1> 
+<h1> <a id="ui-driver-specification" class="anchor" href="#ui-driver-specification" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>UI Driver Specification</h1> 
+<p>We already have a story model with users, stories, scenarios, steps. With this information creation of the UI Driver specification and tests is rather straightforward. </p> 
+<p>We will create:</p> 
 <ul> 
- <li><a href=".overview.md.html">Overview</a></li> 
- <li><a href="tests\pending-and-nop\.README.md.html">Pending and NOP tests</a></li> 
- <li><a href="tests\sketches\.README.md.html">Tests with sketches</a></li> 
- <li>UI Driver 
-  <ul> 
-   <li><a href="ui-driver\specification\.README.md.html">Specification</a></li> 
-   <li>Implementation 
-    <ul> 
-     <li><a href="ui-driver\implementation\sketches\.README.md.html">Sketches</a></li> 
-     <li><a href="ui-driver\implementation\wireframes\.README.md.html">Wireframes</a></li> 
-     <li><a href="ui-driver\implementation\mockups\.README.md.html">Mockups</a></li> 
-    </ul> </li> 
-  </ul> </li> 
- <li><a href=".summary.md.html">Summary</a></li> 
-</ul>
+ <li>Guest and Customer actors for Guest and Customer users.</li> 
+ <li>Pages for states.<br /> </li> 
+ <li>Test classes for stories.</li> 
+ <li>Test methods for scenarios.</li> 
+ <li>Actor/page methods for steps.</li> 
+</ul> 
+<p>We will use <code>@Link</code> annotation to establish traceability between the test/UI driver classes and interfaces and the story model elements. In order to link UI driver and tests classes and methods to story model elements we will need to assign ID's to the referenced story model elements.</p> 
+<h3> <a id="actors" class="anchor" href="#actors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Actors</h3> 
+<h4> <a id="guest" class="anchor" href="#guest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Guest</h4> 
+<h4> <a id="customer" class="anchor" href="#customer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customer</h4> 
+<h3> <a id="pages" class="anchor" href="#pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pages</h3> 
+<p>...</p> 
+<h3> <a id="tests" class="anchor" href="#tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tests</h3> 
+<p>... </p> 
+<p>JavaDoc links to actor interfaces from story users. Bi-directional link to test results actors.</p> 
+<p>page -&gt; state actor -&gt; user test method -&gt; scenario actor/page method -&gt; step</p> 
+<p>Mention Mockito or use it???</p>
 </body>
 </html>
