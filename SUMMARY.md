@@ -12,6 +12,16 @@
   * [Summary](chapter-0-setup/summary.md)  
 * [User Stories](chapter-1-user-stories/README.md)
 * [Automated UI Tests](chapter-2-automated-ui-tests/README.md)
+  * [Overview](chapter-2-automated-ui-tests/overview.md)
+  * [Pending and NOP tests](chapter-2-automated-ui-tests/tests/pending-and-nop/README.md)
+  * [Tests with sketches](chapter-2-automated-ui-tests/tests/sketches/README.md)
+  * UI Driver
+    * [Specification](chapter-2-automated-ui-tests/ui-driver/specification/README.md)
+    * Implementation
+      * [Sketches](chapter-2-automated-ui-tests/ui-driver/implementation/sketches/README.md)
+      * [Wireframes](chapter-2-automated-ui-tests/ui-driver/implementation/wireframes/README.md)
+      * [Mockups](chapter-2-automated-ui-tests/ui-driver/implementation/mockups/README.md)
+  * [Summary](chapter-2-automated-ui-tests/summary.md)
 * [Domain Model](chapter-3-domain-model/README.md)
 * [Services](chapter-4-services/README.md)
 * [User Interface](chapter-5-ui/README.md)
