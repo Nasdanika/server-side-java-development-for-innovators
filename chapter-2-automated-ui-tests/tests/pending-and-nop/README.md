@@ -185,4 +185,8 @@ So now we have our tests which do nothing at the point, but they are automatical
 
 In the next section we will modify our tests to use the sketches of UI as "screenshots".
 
-Tags in version control (tag the book also), Docker image link. 
+Tags:
+
+* Source code - [chapter-2-automated-ui-tests/tests/pending-and-nop](https://github.com/Nasdanika/bank/tree/chapter-2-automated-ui-tests/tests/pending-and-nop)
+* Docker image - [19](https://hub.docker.com/r/nasdanika/bank/tags/).
+
