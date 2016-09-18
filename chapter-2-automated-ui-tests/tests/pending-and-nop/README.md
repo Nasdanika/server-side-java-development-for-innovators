@@ -181,7 +181,7 @@ There is a new tab "Links" with contains a link to the test class results and a 
 
 ## Summary
 
-So now we have our tests, which do nothing at the point, but they are automatically executed and the test results are bidirectionally linked to the story model elements. 
+So now we have our tests, which do nothing at this point of time, but they are automatically executed and the test results are bidirectionally linked to the story model elements. 
 
 In the next section we will modify our tests to use the sketches of UI as "screenshots".
 
