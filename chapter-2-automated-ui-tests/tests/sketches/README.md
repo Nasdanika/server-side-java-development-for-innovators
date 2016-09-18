@@ -228,7 +228,7 @@ has two linked tests with the same name and parameter values in parentheses:
 In this section we have laid the foundation for gradually evolving our tests to support progressive
 continuous elaboration of user experience. 
 In subsequent sections we will create wireframes and mockup screens based on the sketches and our test results will show them side-by-side in order to demonstrate
-to the stakeholders that, say a wireframe is an elaboration of a corresponding sketch, 
+to the stakeholders that, say, a wireframe is an elaboration of a corresponding sketch, 
 and not something completely different.
 
 ## References
