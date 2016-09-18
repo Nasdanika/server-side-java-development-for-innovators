@@ -30,3 +30,10 @@ Rendering:
 - Other things - mustach for Java, FreeMarker.
 
 Add registration - show that spending time on sketches wireframes and mockups is not worth it because the domain model and routes are already in place. Maybe mockups, but in Guest routes.
+
+## Additional Resources
+
+YouTube videos showing how to create web routes using annotated EOperations. This approach is complementary to the object routes approach which we used for our application. It introduces UI concerns into the model itself and therefore is suitable for situations where the model's sole purpose is to serve web content and the UI is simple, i.e. the number of routes per class is small. 
+
+* [Web functionality through route operations ](https://www.youtube.com/watch?v=SdVgV-iE0Zs).
+* [Bootstrap/Backbone router application ](https://www.youtube.com/watch?v=hwcMSwHS7Ew). 

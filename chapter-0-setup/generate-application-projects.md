@@ -89,3 +89,7 @@ So now we have a set of projects which constitute our application. In the [next 
 
 A detailed explanation of the role and structure of each project will be provided later. 
 
+## Additional Resources
+
+* [Nasdanika Application Workspace Wizard ](https://www.youtube.com/watch?v=Gg4CNgqoHR4) - YouTube video showing how to generate workspace projects. A bit dated.
+
