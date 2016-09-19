@@ -33,7 +33,10 @@ Add registration - show that spending time on sketches wireframes and mockups is
 
 ## Additional Resources
 
-YouTube videos showing how to create web routes using annotated EOperations. This approach is complementary to the object routes approach which we used for our application. It introduces UI concerns into the model itself and therefore is suitable for situations where the model's sole purpose is to serve web content and the UI is simple, i.e. the number of routes per class is small. 
+YouTube videos showing how to create web routes using annotated EOperations. This approach is complementary to the object routes approach which we used for our application. It introduces UI concerns into the model itself and adds a dependency on web bundles to the model bundle. 
+Therefore, is suitable for situations where the model's primary purpose is to serve web content and the UI is simple, 
+i.e. the number of routes per class is small.
+In this case keeping UI concerns in the model may make the system easier to understand.  
 
 * [Web functionality through route operations ](https://www.youtube.com/watch?v=SdVgV-iE0Zs).
 * [Bootstrap/Backbone router application ](https://www.youtube.com/watch?v=hwcMSwHS7Ew). 
