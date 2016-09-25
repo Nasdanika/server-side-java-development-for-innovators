@@ -1,6 +1,6 @@
 # User Interface
 
-why Knockout, why not Angular - too complex, swallows/hides binding errors. Knockout conceptually is similar to JFace data binding
+why Knockout, why not Angular - too complex, swallows/hides binding errors. Knockout conceptually is similar to JFace data bindings
 
 * Concept of routes
 * Dispatch Routes, mounting of resources. Contextual execution.

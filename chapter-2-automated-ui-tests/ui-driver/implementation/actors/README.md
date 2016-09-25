@@ -1,4 +1,197 @@
-# UI Driver Specification
+# Actor implementations
+
+In this section we will implement actor interfaces in terms of page specifications.
+
+## Guest
+
+This is the implementation of ``Guest`` actor interface:
+
+```java
+package org.nasdanika.bank.ui.driver.actors.impl;
+
+import org.nasdanika.bank.ui.driver.actors.Customer;
+import org.nasdanika.bank.ui.driver.actors.Guest;
+import org.nasdanika.bank.ui.driver.actors.NasdanikaBankActorFactory;
+import org.nasdanika.bank.ui.driver.actors.TestCustomer;
+import org.nasdanika.bank.ui.driver.pages.customer.Home;
+import org.nasdanika.webtest.Page;
+import org.openqa.selenium.WebDriver;
+
+class GuestImpl implements Guest {
+	
+	private NasdanikaBankActorFactory factory;
+	private WebDriver webDriver;
+
+	GuestImpl(NasdanikaBankActorFactory factory, WebDriver webDriver) {
+		this.webDriver = webDriver;
+		this.factory = factory;
+	}
+	
+	private Page<WebDriver> currentPage;
+
+	@Override
+	public Page<WebDriver> getCurrentPage() {
+		return currentPage;
+	}
+
+	@Override
+	public void navigateToHomePage() {
+		currentPage = factory.getPageFactory().navigateToGuestHomePage(webDriver);
+	}
+
+	@Override
+	public Customer logIn(String userId, String password) {
+		org.nasdanika.bank.ui.driver.pages.guest.Home guestHome = (org.nasdanika.bank.ui.driver.pages.guest.Home) currentPage;
+		guestHome.setLogin(userId);
+		guestHome.setPassword(password);
+		// TODO - analyze resulting page - customer home or guest home with an error message if log-in failed.
+		// For now assuming happy path.
+		org.nasdanika.bank.ui.driver.pages.customer.Home customerHome = (Home) guestHome.clickLogInButton();
+		return new CustomerImpl(factory, webDriver, customerHome);
+	}
+
+	@Override
+	public Customer register() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public TestCustomer createTestCustomer(String alias) {
+		// TODO - either use UI or communicate with the application by other means
+		// to create a customer object. For now we create an anonymous instance with static data.
+		return new TestCustomer() {
+
+			@Override
+			public void close() throws Exception {
+				// NOP, in a real implementation - delete customer object from the application. 				
+			}
+
+			@Override
+			public String getUserId() {
+				return "john-doe";
+			}
+
+			@Override
+			public String getPassword() {
+				return "irrelevant";
+			}
+			
+		};
+	}
+
+}
+```
+
+The ``logIn()`` method uses the Page specification API to set user ID, password and click the log-in button. Then 
+it creates and returns an instanceof ``Customer`` actor.
+
+``register()`` is not currently supported.
+
+``createTestCustomer()`` instantiates and returns an anonymous instance of ``TestCustomer``. Later this method
+should be elaborated to create a customer object in the application object store and ``TestCustomer.close()`` method shall delete the customer object.
+
+## Customer
+
+Below is the initial implementation of the ``Customer`` actor. As with the ``Guest`` implementation it currently only has functionality to demonstrate basic UI flows.
+More functionality will have to be added later to support more advanced flows and testing. 
+
+```java
+package org.nasdanika.bank.ui.driver.actors.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.nasdanika.bank.ui.driver.actors.Customer;
+import org.nasdanika.bank.ui.driver.actors.Guest;
+import org.nasdanika.bank.ui.driver.actors.NasdanikaBankActorFactory;
+import org.nasdanika.bank.ui.driver.pages.customer.AccountDetails;
+import org.nasdanika.bank.ui.driver.pages.customer.Home;
+import org.nasdanika.bank.ui.driver.pages.customer.Home.AccountSummary;
+import org.nasdanika.bank.ui.driver.pages.customer.Template;
+import org.nasdanika.webtest.Page;
+import org.openqa.selenium.WebDriver;
+
+class CustomerImpl implements Customer {
+
+	private NasdanikaBankActorFactory factory;
+	private Page<WebDriver> currentPage;
+	private WebDriver webDriver;
+
+	CustomerImpl(NasdanikaBankActorFactory factory, WebDriver webDriver, org.nasdanika.bank.ui.driver.pages.customer.Home homePage) {
+		this.factory = factory;
+		this.webDriver = webDriver;
+		currentPage = homePage;
+	}
+
+	@Override
+	public Page<WebDriver> getCurrentPage() {
+		return currentPage;
+	}
+			
+	private class AccountImpl implements Account {
+		
+		private AccountSummary summary;
+		private AccountDetails details;
+
+		AccountImpl(AccountSummary summary) {
+			this.summary = summary;
+		}
+
+		@Override
+		public Page<WebDriver> getCurrentPage() {
+			return currentPage;
+		}
+
+		@Override
+		public List<Statement> getStatements() {
+			// TODO - analyze if the current details page is the page for this particular account
+			// If yes - use data from it, if no - navigate to the customer home and then 
+			// Navigate to the details.
+			// For now we don't check account number on the details page.
+			if (currentPage instanceof Home) {
+				details = summary.navigateToDetails();
+			}
+			
+			return details.getStatements().stream().map(s -> new StatementImpl(s)).collect(Collectors.toList());
+		}
+		
+	}
+	
+	private class StatementImpl implements Statement {
+		
+		private org.nasdanika.bank.ui.driver.pages.customer.AccountDetails.Statement statement;
+
+		StatementImpl(org.nasdanika.bank.ui.driver.pages.customer.AccountDetails.Statement statement) {
+			this.statement = statement;
+		}
+
+		@Override
+		public Page<WebDriver> getCurrentPage() {
+			return currentPage;
+		}
+
+		@Override
+		public List<Transaction> getTransactions() {
+			// TODO
+			throw new UnsupportedOperationException();
+		}
+		
+	}
+
+	@Override
+	public List<Account> getAccounts() {
+		return ((Home) currentPage).getAccountSummaries().stream().map(s -> new AccountImpl(s)).collect(Collectors.toList());
+	}
+
+	@Override
+	public Guest logOut() {
+		((Template) currentPage).logOut();
+		return new GuestImpl(factory, webDriver);
+	}
+
+}
+
+```
 
 UI Driver abstracts tests from low-level details of user interfaces. 
 Essentially, the UI Driver is an [embedded/internal DSL](https://en.wikipedia.org/wiki/Domain-specific_language#Domain-specific_language_topics) in which tests are written.
@@ -15,11 +208,12 @@ In Nasdanika WebTest the UI driver consists of 4 components in two logical layer
 
 ![webtest](https://github.com/Nasdanika/server/wiki/webtest.png)
 
+
 We already have a story model with users, stories, scenarios, steps. 
 
 ![story-model.png](story-model.png)
 
-With this information creation of the UI Driver specification is rather straightforward.
+With this information creation of the UI Driver specification and tests implementations is rather straightforward.
 
 We will create:
 
@@ -30,13 +224,18 @@ We will create:
 
 As with the tests we will use [@Link](http://www.nasdanika.org/server/apidocs/org.nasdanika.webtest/target/site/apidocs/org/nasdanika/webtest/Link.html) annotation to establish traceability between the UI driver interfaces and the story model elements.
 
-## Actors
+
+### Specifications
+
+First we shall create actor and page specifications.
+
+#### Actors
 
 WebTest actor interfaces correspond to protagonists (Roles, Actors, Users, Systems) in the story model with interface methods corresponding to stories. 
 
 As stories transition between states and states are represented by pages, it might seem logical for actor methods to return page interfaces. However, it introduces a dependency between the actor and page specifications, which might be not be desirable. The current page can be accessed via ``Actor.getCurrentPage()`` method.
 
-### Factory
+##### Factory
 
 Factory is responsible for creation of instances of ``Guest`` actor. 
 
@@ -55,7 +254,7 @@ public interface NasdanikaBankActorFactory {
 }
 ```   
 
-### Guest
+##### Guest
 
 Below is the ``Guest`` interface. It has a link to the ``Guest`` user in the story model.
 Interface methods correspond to the ``Guest`` user stories and have links to the corresponding stories.
@@ -113,7 +312,8 @@ public interface Guest extends Actor<WebDriver> {
 	/**
 	 * Helper method to simplify testing.
 	 * @param alias Customer alias. If null, then the alias is set to "Customer".
-	 * @return Test customer
+	 * @return
+	 * @throws IllegalArgumentException
 	 */
 	@Description("Generates random but unique customer registration data and registers a customer")
 	TestCustomer createTestCustomer(String alias);
@@ -121,7 +321,7 @@ public interface Guest extends Actor<WebDriver> {
 }
 ```
 
-### Customer
+##### Customer
 
 
 ``Customer`` interface corresponds to the ``Customer`` user in the story model and is linked to it. 
@@ -221,12 +421,14 @@ public interface Customer extends Actor<WebDriver> {
 }
 ```
 
-### TestCustomer
+###### TestCustomer
 
-``TestCustomer`` is a helper interface to simplify testing. 
+``TestCustomer`` is a ``Customer`` specialization for testing purposes. 
 
 ```java
 package org.nasdanika.bank.ui.driver.actors;
+
+import org.nasdanika.webtest.Aliased;
 
 /**
  * Helper class to simplify testing. Tests customers are created with
@@ -234,7 +436,7 @@ package org.nasdanika.bank.ui.driver.actors;
  * @author Pavel Vlasov
  *
  */
-public interface TestCustomer extends AutoCloseable {
+public interface TestCustomer extends Customer, Aliased {
 	
 	/*
 	 * Maybe a better way is to have an interface RegistrationInfo and a method getRegistrationInfo(). 
@@ -250,58 +452,23 @@ public interface TestCustomer extends AutoCloseable {
 	 */
 	String getPassword();
 	
+	/**
+	 * Removes test customer record.
+	 */
+	void dispose();
 
 }
 ```
 
-## Pages
 
-### Factory
+#### Pages
 
-The factory is responsible for creation of "entry-points" pages.
-
-```java
-package org.nasdanika.bank.ui.driver.pages;
-
-import org.nasdanika.bank.ui.driver.pages.guest.Home;
-import org.openqa.selenium.WebDriver;
-
-public interface NasdanikaBankPageFactory {
-	
-	/**
-	 * Navigates to the guest home page and creates a page instance.
-	 * @param webDriver
-	 * @return
-	 */
-	Home navigateToGuestHomePage(WebDriver webDriver);
-
-	/**
-	 * Creates a page instance.
-	 * @param webDriver
-	 * @return
-	 */
-	Home createGuestHomePage(WebDriver webDriver);
-	
-}
-```
-
-Our entry-point page is guest home. There are two methods to create this page:
-
-* ``navigateToGuestHomePage()`` navigates the browser to the page URL and then creates a page instance.
-* ``createGuestHomePage()`` creates a page instance without modifying the browser state, i.e. assuming that the 
-browser has already been navigated to the guest home. 
-
-
-### Guest
+##### Guest
 
 Pages correspond to states in the story model. For ``Guest`` user we have a template "abstract" state and two concrete states. 
-We will put guest pages into ``package org.nasdanika.bank.ui.driver.pages.guest`` package
-and add this package to the list of exported packages in the pages specification bundle manifest file:
+We will put guest pages into ``package org.nasdanika.bank.ui.driver.pages.guest`` package.
 
-![export-guest-pages-package.png](export-guest-pages-package.png) 
-
-
-#### Template
+###### Template
 
 The template interface extends ``NasdanikaBankPage`` and currently doesn't have any methods. 
 
@@ -315,7 +482,7 @@ public interface Template extends NasdanikaBankPage {
 }
 ```
 
-#### Home page
+###### Home page
 
 The home page interface extends the template interface and provides methods to enter login, password, click the "Log In" and access an error
 message text if log in fails.
@@ -341,7 +508,7 @@ public interface Home extends Template {
 ``clickLogInButton()`` method returns a page, which can be the customer home page if log-in was successful, or the guest home page if 
 log-in failed. 
 
-#### Registration form
+###### Registration form
 
 Currently registration is out of scope, so the registration page doesn't declare any methods.
 
@@ -353,14 +520,12 @@ public interface RegistrationForm extends Template {
 }
 ```
 
-### Customer
+##### Customer
 
 Customer has a template "abstract" state, accounts summary (home) state, and account details state. 
-We will create page interfaces corresponding to these states in ``org.nasdanika.bank.ui.driver.pages.customer`` package and export it:
+We will create page interfaces corresponding to these states in ``org.nasdanika.bank.ui.driver.pages.customer`` package.
 
-![export-customer-pages-package.png](export-customer-pages-package.png)
-
-#### Template
+###### Template
 
 The template has ``clickLogOut()`` method, which returns the Guest home page upon successful log-out. 
 It also has ``goHome()`` method for navigating to the accounts summary page using the top navigation menu. 
@@ -379,7 +544,7 @@ public interface Template extends NasdanikaBankPage {
 }
 ```
 
-#### Home
+###### Home
 
 The customer home page has a list of customer accounts with each item in the list displaying account label, 
 which is the accounts's product name with the last 4 digits of the account number, and the current balance:
@@ -413,7 +578,7 @@ public interface Home extends Template {
 }
 ```
 
-#### Account Details
+###### Account Details
 
 Account details page provides additional details about the account, such as next statement closing date, 
 and displays transactions for a particular account statement. 
@@ -456,6 +621,20 @@ public interface AccountDetails extends Template {
 }
 ```  
 
-## Summary
+### Tests implementations
 
-With the specification ready we will now proceed to implementation. 
+factory injection...
+
+...  
+
+
+
+JavaDoc links to actor interfaces from story users. Bi-directional link to test results actors.
+
+page -> state
+actor -> user
+test method -> scenario
+actor/page method -> step
+
+
+Mention Mockito or use it???

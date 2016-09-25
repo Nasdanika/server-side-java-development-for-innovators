@@ -6,7 +6,7 @@
 * Multiple models, routes, tests - unit, integration. 
 * Collection of components (back-end stubs and/or connectors) in shared repositories, 
 * Trying new technologies, e.g. new UI framework leveraging existing API's and tests. Or even side-by-side.
-* Issue reporting ToolbarContributor, also an issue reporting icon to the app pages. Index cards and sticky notes do wonders for co-located and allocated (to the project) teams. What about distributed and part-time, gleaning knowledge from a multiple buisiness and technology SME's? The issue reporting tool bar item allows to glean knowledge from distributed and part time involved people across the organization. 
+* Issue reporting ToolbarContributor, also an issue reporting icon to the app pages. Index cards and sticky notes do wonders for co-located and allocated (to the project) teams. What about distributed and part-time, gleaning knowledge from a multiple buisiness and technology SME's? The issue reporting tool bar item allows to glean knowledge from distributed and part time involved people across the organization. An attentive reader should have been driven crazy by the inconsistencies in naming of Sign-In in one place and Log-In in another, it was done deliberately - to show how to report issues. 
 * New members explore the system. Team visualization or team model? - vendor/contact address
 * This book - scaling up knowledge.
 * Tests - store in a repository (maybe only session stats), time dimension

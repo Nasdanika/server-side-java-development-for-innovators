@@ -1,7 +1,7 @@
 # Pending and NOP tests
 
 In this section we will write tests which do nothing and annotate some of them as pending. We will structure our tests after user stories and scenarios from our story model. 
-We will annotate the tests with ``@Link`` annotation along the way to establish references between the user story elements and the tests.
+We will annotate the tests with [@Link](http://www.nasdanika.org/server/apidocs/org.nasdanika.webtest/target/site/apidocs/org/nasdanika/webtest/Link.html) annotation along the way to establish references between the user story elements and the tests.
 
 Once we have the tests we will execute them and browse the results in the documentation system.
 
