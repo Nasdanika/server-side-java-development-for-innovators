@@ -317,20 +317,39 @@ public interface Template extends NasdanikaBankPage {
 
 #### Home page
 
-The home page interface extends the template interface and provides methods to enter login, password, click the "Log In" and access an error
-message text if log in fails.
+The home page interface extends the template interface and provides methods to enter login, password, click the "Log In" and 
+access the error message text if log in fails. 
 
 ```java
-package org.nasdanika.bank.ui.driver.pages.guest;
-
-import org.nasdanika.bank.ui.driver.pages.NasdanikaBankPage;
-
+@Link(
+		type = "State@urn:org.nasdanika.story", 
+		value = "org.nasdanika.bank.app/Bank.nasdanika_story#guest.home-page")
 public interface Home extends Template {
 	
+	@Sketch(
+			before="bundle://org.nasdanika.bank.app/sketches/guest-home-web.png",
+			after="guest-home-web-login.png",
+			selector="sketch/web")
+	@Sketch(
+			before="bundle://org.nasdanika.bank.app/sketches/guest-home-mobile.png",
+			after="guest-home-mobile-login.png",
+			selector="sketch/mobile")	
 	void setLogin(String login);
 	
+	@Sketch(
+			after="guest-home-web-password.png",
+			selector="sketch/web")
+	@Sketch(
+			after="guest-home-mobile-password.png",
+			selector="sketch/mobile")	
 	void setPassword(String password);
 	
+	@Sketch(
+			after="guest-home-web-clickLogInButton.png",
+			selector="sketch/web")
+	@Sketch(
+			after="guest-home-mobile-clickLogInButton.png",
+			selector="sketch/mobile")	
 	NasdanikaBankPage clickLogInButton();
 	
 	String getLogInErrorMessage();
@@ -340,6 +359,19 @@ public interface Home extends Template {
 
 ``clickLogInButton()`` method returns a page, which can be the customer home page if log-in was successful, or the guest home page if 
 log-in failed. 
+
+The interface is annotated with ``@Link`` annotation pointing to the 
+corresponding State in the story model. The interface methods are annotated with ``@Sketch`` annotation for 
+simulating "screenshots".
+
+You can see that some sketch annotations reference images relative to the interface. 
+
+![page-spec](page-spec.png)
+  
+These images are copies of the original sketches with "activated" UI elements highlighted. 
+Guest home web sketch with the Sign-On button highlighted is shown below:
+
+![guest-home-web-clickLogInButton](guest-home-web-clickLogInButton.png)
 
 #### Registration form
 
@@ -396,6 +428,12 @@ package org.nasdanika.bank.ui.driver.pages.customer;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.nasdanika.webtest.Link;
+import org.nasdanika.webtest.Sketch;
+
+@Link(
+		type = "State@urn:org.nasdanika.story", 
+		value = "org.nasdanika.bank.app/Bank.nasdanika_story#customer.accounts-summary")
 public interface Home extends Template {
 	
 	interface AccountSummary {
@@ -406,8 +444,14 @@ public interface Home extends Template {
 		
 		AccountDetails navigateToDetails();
 		
-	}	
-	
+	}
+		
+	@Sketch(
+			after="bundle://org.nasdanika.bank.app/sketches/customer-home-web.png",
+			selector="sketch/web")
+	@Sketch(
+			after="bundle://org.nasdanika.bank.app/sketches/customer-home-mobile.png",
+			selector="sketch/mobile")
 	List<AccountSummary> getAccountSummaries();
 	
 }
@@ -432,6 +476,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import org.nasdanika.webtest.Link;
+import org.nasdanika.webtest.Sketch;
+
+@Link(
+		type = "State@urn:org.nasdanika.story", 
+		value = "org.nasdanika.bank.app/Bank.nasdanika_story#customer.accounts-summary")
 public interface AccountDetails extends Template {
 	
 	interface Statement {
@@ -447,10 +497,22 @@ public interface AccountDetails extends Template {
 		
 		String getLabel();
 		
+		@Sketch(
+				after="account-details-select-statement-web.png",
+				selector="sketch/web")
+		@Sketch(
+				after="account-details-select-statement-mobile.png",
+				selector="sketch/mobile")
 		List<Transaction> select();
 		
 	}
 	
+	@Sketch(
+			after="bundle://org.nasdanika.bank.app/sketches/account-details-web.png",
+			selector="sketch/web")
+	@Sketch(
+			after="bundle://org.nasdanika.bank.app/sketches/account-details-mobile.png",
+			selector="sketch/mobile")
 	List<Statement> getStatements();
 
 }
